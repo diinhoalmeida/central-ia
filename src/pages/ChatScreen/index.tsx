@@ -1,3 +1,9 @@
+import { Header } from "../../components/Header/Header";
+
 export function ChatScreen() {
-  return <h1>Hello, ChatScreen</h1>;
+  return (
+    <main>
+      <Header />
+    </main>
+  );
 }
