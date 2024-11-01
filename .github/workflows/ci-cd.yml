@@ -1,0 +1,73 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - development 
+
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+    outputs:
+      changes: ${{ steps.check_changes.outputs.changes }} 
+    steps:
+      
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' 
+
+      
+      - name: Install dependencies
+        run: npm install
+
+      
+      - name: Run ESLint
+        run: npm run lint -- --fix
+
+      
+      - name: Run Prettier
+        run: npx prettier --write .
+
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if [[ `git status --porcelain` ]]; then
+            git add .
+            git commit -m "style: apply eslint and prettier fixes"
+            echo "true" > has_changes.txt
+          else
+            echo "false" > has_changes.txt
+        
+        shell: bash
+      - name: Output changes result
+        id: output_changes
+        run: echo "::set-output name=changes::$(cat has_changes.txt)"
+
+  merge-to-main:
+    needs: lint-and-format
+    if: needs.lint-and-format.outputs.changes == 'false' 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      
+      - name: Configure git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      
+      - name: Merge to main
+        run: |
+          git checkout main
+          git merge develop --no-ff
+          git push origin main
