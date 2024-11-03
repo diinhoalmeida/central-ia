@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { HeaderHomePage } from "../../components/HeaderHomePage";
 import { SidebarHome } from "../../components/SidebarHome";
+import { Banner } from "../../components/Banner/Banner";
 
 export function Home() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -41,6 +42,20 @@ export function Home() {
             aria-expanded={isSidebarVisible}
           />
         </nav>
+
+        <div className="flex-1">
+          <section role="region" aria-label="Destaque principal">
+            <Banner />
+          </section>
+
+          {/* <section
+            id="main-content"
+            className="p-4"
+            role="region"
+            aria-label="Conteúdo principal"
+          >
+          </section> */}
+        </div>
       </div>
     </main>
   );
