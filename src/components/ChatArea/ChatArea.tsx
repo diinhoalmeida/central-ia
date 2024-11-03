@@ -1,5 +1,5 @@
 import { HTMLAttributes, useState } from "react";
-import { SelectButton } from "./SelectButton";
+import { SelectButton } from "../SelectButton";
 import { MessageInput } from "./MessageInput";
 import { MessageList } from "./MessageList";
 import { PromptSuggestionButtons } from "./PromptSuggestionButton";

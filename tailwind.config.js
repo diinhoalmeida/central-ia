@@ -13,7 +13,8 @@ export default {
         colorEmeraldTeal: "#54bda3",
         colorNeutralDarkGray: "#393939",
         borderPromptSuggestion: "#ececec",
-        chatGptColor: "#10a37f"
+        chatGptColor: "#10a37f",
+        darkGray: "#404040"
       },
       screens: {
         "max-[1560px]": { max: "1560px" },
