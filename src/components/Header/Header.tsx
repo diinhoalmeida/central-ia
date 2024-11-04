@@ -1,7 +1,7 @@
 import { HTMLAttributes } from "react";
 import { FiMenu } from "react-icons/fi";
 import { CreditsDisplayButton } from "../CreditsDisplayButton";
-import { UserAvatar } from "./UserAvatar";
+import { UserAvatar } from "../UserAvatar";
 import { SelectButton } from "../SelectButton";
 import { useAppContext } from "../../context/AppContext";
 import { HeaderLogo } from "../HeaderLogo";

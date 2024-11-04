@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { UserMenu } from "../UserMenu";
+import { UserMenu } from "../Header/UserMenu";
 
 export function UserAvatar() {
   const [isLoading, setIsLoading] = useState(true);
