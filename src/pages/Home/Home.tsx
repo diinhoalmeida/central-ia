@@ -5,6 +5,7 @@ import { Banner } from "../../components/Banner/Banner";
 import { MainSection } from "../../components/MainSection";
 import { WhoCanUse } from "../../components/WhoCanUse";
 import { PricingPlans } from "../../components/PricingPlans";
+import { Footer } from "../../components/FooterHome";
 
 export function Home() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -87,6 +88,8 @@ export function Home() {
             </div>
             <PricingPlans />
           </section>
+
+          <Footer />
         </div>
       </div>
     </main>
