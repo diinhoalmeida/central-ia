@@ -4,6 +4,7 @@ import { SidebarHome } from "../../components/SidebarHome";
 import { Banner } from "../../components/Banner/Banner";
 import { MainSection } from "../../components/MainSection";
 import { WhoCanUse } from "../../components/WhoCanUse";
+import { PricingPlans } from "../../components/PricingPlans";
 
 export function Home() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -73,13 +74,18 @@ export function Home() {
 
           <section
             role="region"
-            className="p-4 from-blue-600 to-blue-500 max-w-[1280px] rounded-xl mx-auto bg-gradient-to-r"
+            className="p-4 from-blue-600 to-blue-500 max-w-[1280px] rounded-xl mx-auto bg-gradient-to-r relative top-[-50px]"
             aria-labelledby="who-can-use-header"
           >
-            <h2 id="who-can-use-header" className="sr-only">
+            <h1 id="who-can-use-header" className="sr-only">
               Quem pode usar
-            </h2>
+            </h1>
             <WhoCanUse />
+            <div className="max-w-7xl mx-auto text-white">
+              <h2 className="font-medium text-3xl">Veja os resultados desde o primeiro dia.</h2>
+              <h3 className="font-bold text-4xl">Preços que se pagam a si próprios.</h3>
+            </div>
+            <PricingPlans />
           </section>
         </div>
       </div>
