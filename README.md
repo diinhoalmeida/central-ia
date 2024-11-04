@@ -107,3 +107,17 @@ central-ia-project/
 ## Considerações Finais
 
 Este projeto foi desenvolvido para demonstrar habilidades em desenvolvimento full stack, com ênfase na integração entre frontend e backend, uso de autenticação com Firebase, e manipulação de dados em um banco SQL. Siga as instruções acima para configurar e rodar a aplicação localmente. Para dúvidas, entre em contato.
+
+## Tutorial de Configuração do Firebase Auth
+
+Adicione as seguintes variáveis de ambiente ao arquivo `.env`:
+
+```bash
+REACT_APP_FIREBASE_API_KEY=AIzaSyAeP4Ecq37z_fp2QmYBkfgCSQQlbNvqMjI
+REACT_APP_FIREBASE_AUTH_DOMAIN=central-ia.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=central-ia-63f4d
+REACT_APP_FIREBASE_STORAGE_BUCKET=central-ia.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=926521828631
+REACT_APP_FIREBASE_APP_ID=1:926521828631:web:926521828631
+
+```
