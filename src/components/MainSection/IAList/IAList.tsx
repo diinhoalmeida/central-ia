@@ -1,9 +1,11 @@
+import { ReactNode } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 interface IAItem {
   name: string;
   company?: string;
-  image?: string; 
+  image?: string;
+  icon?: ReactNode;
 }
 
 interface IAListProps {
@@ -23,8 +25,14 @@ export function IAList({ title, items }: IAListProps) {
           >
             <div className="flex items-center gap-4">
               <div className="h-12 w-12 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
-                {item.image ? (
-                  <img src={item.image} alt={item.name} className="h-full w-full object-contain" />
+                {item.icon ? (
+                  <span className="text-2xl text-blue-600">{item.icon}</span>
+                ) : item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="h-full w-full object-contain"
+                  />
                 ) : (
                   <span className="text-lg font-bold text-blue-600">
                     {item.name[0]}
@@ -35,7 +43,9 @@ export function IAList({ title, items }: IAListProps) {
                 <h3 className="text-xl font-semibold text-gray-800">
                   {item.name}
                 </h3>
-                {item.company && <p className="text-sm text-gray-500">{item.company}</p>}
+                {item.company && (
+                  <p className="text-sm text-gray-500">{item.company}</p>
+                )}
               </div>
             </div>
           </li>
