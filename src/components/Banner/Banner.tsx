@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 export function Banner() {
   return (
     <header
-      className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-16 px-6 text-center"
+      className="bg-gradient-to-r from-blue-600 pb-60 to-blue-500 text-white py-16 px-6 text-center"
       role="banner"
     >
       <div className="flex flex-col items-center max-w-[960px] mx-auto">

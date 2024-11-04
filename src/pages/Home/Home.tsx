@@ -2,6 +2,7 @@ import { useState } from "react";
 import { HeaderHomePage } from "../../components/HeaderHomePage";
 import { SidebarHome } from "../../components/SidebarHome";
 import { Banner } from "../../components/Banner/Banner";
+import { MainSection } from "../../components/MainSection";
 
 export function Home() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -48,13 +49,14 @@ export function Home() {
             <Banner />
           </section>
 
-          {/* <section
+          <section
             id="main-content"
             className="p-4"
             role="region"
             aria-label="Conteúdo principal"
           >
-          </section> */}
+            <MainSection />
+          </section>
         </div>
       </div>
     </main>

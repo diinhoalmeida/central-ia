@@ -3,7 +3,7 @@ import { FaGraduationCap, FaTools, FaBars } from "react-icons/fa";
 import { StyledDropdownButton } from "../DropDownHome";
 import { HeaderLogo } from "../HeaderLogo";
 import { AuthButtons } from "../AuthButtons";
-import { SearchBar } from "../SearchBar";
+import { SearchBar } from "./SearchBar";
 
 export function HeaderHomePage({ onMenuClick }: { onMenuClick: () => void }) {
   const [activeLink, setActiveLink] = useState<string>("Início");
@@ -27,7 +27,7 @@ export function HeaderHomePage({ onMenuClick }: { onMenuClick: () => void }) {
   );
 
   return (
-    <header className="bg-colorBaseWhite flex flex-col px-4 shadow-md z-10 sticky top-0 w-screen">
+    <header className="bg-colorBaseWhite flex flex-col px-4 shadow-md z-10 top-0 w-screen">
       <div className="flex items-center justify-between h-[90px]">
         <div className="flex flex-row items-center gap-10">
           <button
