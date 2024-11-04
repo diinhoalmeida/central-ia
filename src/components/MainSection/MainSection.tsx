@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { IAList } from "./IAList";
 import api from "../../config/axiosInstance";
+import { FaLightbulb, FaPaintBrush, FaKeyboard, FaFilePdf } from "react-icons/fa";
+
 
 interface IAData {
   name: string;
@@ -44,12 +46,13 @@ export function MainSection() {
   }, [apiIAs]);
 
   const categories = [
-    { name: "Produtividade" },
-    { name: "Geração de Imagens" },
-    { name: "Geração de Texto" },
-    { name: "Análise de PDF" },
-    { name: "Análise de PDF" },
+    { name: "Produtividade", icon: <FaLightbulb /> },
+    { name: "Geração de Imagens", icon: <FaPaintBrush /> },
+    { name: "Geração de Texto", icon: <FaKeyboard /> },
+    { name: "Análise de PDF", icon: <FaFilePdf /> },
+    { name: "Análise de PDF", icon: <FaFilePdf /> },
   ];
+  
 
   return (
     <section className="bg-transparent relative z-10 top-[-170px] py-12 px-4">
