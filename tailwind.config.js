@@ -20,6 +20,8 @@ export default {
         "max-[1560px]": { max: "1560px" },
         "md-1": "950px",
         "ls-1": "455px",
+        "ls-1-1": "500px",
+        "ls-2": "800px",
       },
     },
   },

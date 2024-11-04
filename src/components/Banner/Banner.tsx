@@ -8,11 +8,11 @@ export function Banner() {
     >
       <div className="flex flex-col items-center max-w-[960px] mx-auto">
         <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4">
+          <h1 className="text-2xl sm:text-3xl md-1:text-4xl font-semibold mb-4">
             Pesquise pela Inteligência Artificial Desejada para Ter Acesso a
             Ferramentas, Tutoriais e Soluções
           </h1>
-          <p className="text-base sm:text-lg md:text-xl mb-6">
+          <p className="text-base sm:text-lg md-1:text-xl mb-6">
             Encontre as melhores ferramentas para o seu negócio, desenvolva suas
             ideias e acelere seus resultados com IA.
           </p>

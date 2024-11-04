@@ -3,6 +3,7 @@ import { HeaderHomePage } from "../../components/HeaderHomePage";
 import { SidebarHome } from "../../components/SidebarHome";
 import { Banner } from "../../components/Banner/Banner";
 import { MainSection } from "../../components/MainSection";
+import { WhoCanUse } from "../../components/WhoCanUse";
 
 export function Home() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -24,7 +25,9 @@ export function Home() {
         Pular para o conteúdo principal
       </a>
 
-      <HeaderHomePage onMenuClick={toggleSidebar} />
+      <header role="banner">
+        <HeaderHomePage onMenuClick={toggleSidebar} />
+      </header>
 
       <div className="flex relative flex-1">
         {isSidebarVisible && (
@@ -36,16 +39,23 @@ export function Home() {
           />
         )}
 
-        <nav role="navigation" aria-label="Menu lateral" className="h-full">
+        <aside
+          role="complementary"
+          aria-label="Menu lateral"
+          className="h-full"
+        >
           <SidebarHome
             isVisible={isSidebarVisible}
             onClose={toggleSidebar}
             aria-expanded={isSidebarVisible}
           />
-        </nav>
+        </aside>
 
         <div className="flex-1">
-          <section role="region" aria-label="Destaque principal">
+          <section role="region" aria-labelledby="main-highlight">
+            <h2 id="main-highlight" className="sr-only">
+              Destaque principal
+            </h2>
             <Banner />
           </section>
 
@@ -53,9 +63,23 @@ export function Home() {
             id="main-content"
             className="p-4"
             role="region"
-            aria-label="Conteúdo principal"
+            aria-labelledby="main-content-header"
           >
+            <h2 id="main-content-header" className="sr-only">
+              Conteúdo principal
+            </h2>
             <MainSection />
+          </section>
+
+          <section
+            role="region"
+            className="p-4 from-blue-600 to-blue-500 max-w-[1280px] rounded-xl mx-auto bg-gradient-to-r"
+            aria-labelledby="who-can-use-header"
+          >
+            <h2 id="who-can-use-header" className="sr-only">
+              Quem pode usar
+            </h2>
+            <WhoCanUse />
           </section>
         </div>
       </div>

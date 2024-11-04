@@ -13,7 +13,7 @@ export function HelpButton() {
         aria-hidden="true"
         role="img"
       />
-      <span className="sr-only md:not-sr-only">Ajuda</span>
+      <span className="sr-only md-1:not-sr-only">Ajuda</span>
     </button>
   );
 }
